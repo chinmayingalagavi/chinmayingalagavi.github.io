@@ -1,0 +1,6 @@
+title: My Site
+description: Just getting started
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+remote_theme: pages-themes/minimal@v0.2.0
