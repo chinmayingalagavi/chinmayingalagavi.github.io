@@ -1,0 +1,9 @@
+---
+---
+
+@import "{{ site.theme }}";  /* load the Minimal theme */
+
+/* Your tweaks (safe to edit): */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { text-decoration: none; }
+.site-title { letter-spacing: .3px; }
