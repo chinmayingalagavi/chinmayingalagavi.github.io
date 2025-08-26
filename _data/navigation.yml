@@ -1,0 +1,15 @@
+- name: Bio
+  url: "#bio"
+- name: Publications
+  url: "#publications"
+  data_source: "publications"
+- name: Works in Progress
+  url: "#works-in-progress"
+  data_source: "works_in_progress"
+- name: Teaching
+  url: "#teaching"
+  data_source: "teaching"
+- name: Other
+  url: "#other"
+  data_source: "other"
+  data_key: "other_text"

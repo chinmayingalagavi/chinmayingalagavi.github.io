@@ -1,0 +1,8 @@
+- title: "On a class of strategy-proof social choice correspondences with single-peaked utility functions"
+  link: "https://www.sciencedirect.com/science/article/abs/pii/S0304406823001052"
+  coauthors: "Soumyarup Sadhukhan"
+  journal: "Journal of Mathematical Economics"
+  pdf: "assets/files/papers/Ingalagavi Sadhukhan 2023 final.pdf"
+  date: "December 2023"
+  abstract: "We consider the problem of constructing strategy-proof rules that choose sets of alternatives based on the preferences of voters, modelled as Social Choice Correspondences (SCCs) in the literature. We focus on two domain restrictions inspired by Barberà et al. (2001) in the context of single-peaked utility functions. We find that for the narrower domain, the set of tops-only, unanimous, and strategy-proof SCCs coincides with the class of unions of two min–max rules (Moulin, 1980). For the broader domain, the set of SCCs coincides with the class of unions of two 'adjacent' min–max rules, meaning the corresponding parameters for the two rules must be either the same or consecutive alternatives."
+

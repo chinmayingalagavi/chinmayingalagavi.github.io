@@ -1,0 +1,33 @@
+<nav>
+  <strong>Chinmay Ingalagavi</strong>
+  <p>PhD student, Economics <br>
+    University of California, Berkeley</p>
+  <img src="/assets/img/Chinmay_profile.jpg" alt="Profile Image" style="width: 100%;">
+  <div class="social-links">
+    {% for item in site.data.social %}
+      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+        {% if item.icon %}
+          <img src="{{ item.icon }}" alt="{{ item.name }} icon" class="social-icon">
+        {% endif %}
+        {{ item.name }}
+      </a>
+    {% endfor %}
+  </div>
+  <ul>
+    {% for item in site.data.navigation %}
+      {% if item.data_source %}
+        {% if item.data_key %}
+          {% if site.data[item.data_source] and site.data[item.data_source][item.data_key] %}
+            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+          {% endif %}
+        {% else %}
+          {% if site.data[item.data_source] %}
+            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+          {% endif %}
+        {% endif %}
+      {% else %}
+        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

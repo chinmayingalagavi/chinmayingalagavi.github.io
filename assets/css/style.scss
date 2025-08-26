@@ -3,7 +3,141 @@
 
 @import "{{ site.theme }}";  /* load the Minimal theme */
 
+a:hover, a:focus {
+  color: #004488; /* A middle-ground blue */
+  font-weight: normal; /* Override bolding */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* Your tweaks (safe to edit): */
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-a { text-decoration: none; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 60px; 
+}
+a { text-decoration: none; color: #267CB9; }
 .site-title { letter-spacing: .3px; }
+
+.wrapper {
+  display: flex;
+}
+
+.sidebar {
+  width: 320px;
+  position: fixed;
+  left: 220px;
+  padding: 30px 10px 30px 10px;
+  box-sizing: border-box;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  padding: 5px 0;
+  color: #267CB9;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.sidebar nav ul li a:hover, .sidebar nav ul li a:focus {
+  color: #004488;
+}
+
+
+
+.main-content {
+  margin-left: 320px;
+  padding: 30px 10px 30px 30px;
+  font-size: 1.1em;
+}
+
+.social-links {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.social-links a {
+  display: block;
+  margin: 10px 0;
+  color: #267CB9;
+  text-decoration: none;
+}
+
+.social-links a:hover, .social-links a:focus {
+  color: #004488;
+}
+
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+.sidebar nav strong {
+  font-size: 1.85em;
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.social-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.abstract-content {
+  display: none;
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.abstract-toggle {
+  cursor: pointer;
+  margin-left: 5px;
+  color: #267CB9;
+}
+
+.abstract-content p {
+  margin-bottom: 0px;
+}
+
+.abstract-toggle:hover {
+  color: #004488;
+}

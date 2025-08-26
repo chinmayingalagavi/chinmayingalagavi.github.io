@@ -1,0 +1,13 @@
+
+- name: CV
+  url: "/assets/files/CV.pdf"
+  icon: /assets/icon_logos/cv.svg
+- name: Scholar
+  url: "https://scholar.google.com/citations?user=s7NoivsAAAAJ&hl=en&oi=sra"
+  icon: /assets/icon_logos/googlescholar.svg
+- name: LinkedIn
+  url: "https://www.linkedin.com/in/chinmay-ingalagavi-801626213/"
+  icon: /assets/icon_logos/linkedin.svg
+- name: GitHub
+  url: "https://github.com/chinmayingalagavi"
+  icon: /assets/icon_logos/github.svg
