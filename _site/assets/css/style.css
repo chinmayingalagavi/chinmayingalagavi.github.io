@@ -220,7 +220,7 @@ a:hover, a:focus { color: #004488; /* A middle-ground blue */ font-weight: norma
 html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
 /* Your tweaks (safe to edit): */
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background-color: #f8f9fa; padding-top: 60px; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background-color: #f8f9fa; padding-top: 30px; }
 
 a { text-decoration: none; color: #267CB9; }
 
