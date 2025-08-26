@@ -25,15 +25,16 @@ a { text-decoration: none; color: #267CB9; }
 
 .wrapper {
   display: flex;
+  border: 1px solid red;
 }
 
 .sidebar {
   width: 320px;
   position: fixed;
-  left: 220px;
+  left: calc(30% - 235px);
   padding: 30px 10px 30px 10px;
   box-sizing: border-box;
-  border: 1px solid #dee2e6;
+  border: 1px solid rgb(84, 84, 221);
   border-radius: 5px;
 }
 
@@ -58,9 +59,11 @@ a { text-decoration: none; color: #267CB9; }
 
 
 .main-content {
-  margin-left: 320px;
-  padding: 30px 10px 30px 30px;
+  margin-left: 350px;
+  padding: 30px 10px 30px 20px;
   font-size: 1.1em;
+  border: 1px solid green;
+  max-width: 900px;
 }
 
 .social-links {
@@ -81,7 +84,7 @@ a { text-decoration: none; color: #267CB9; }
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .wrapper {
     flex-direction: column;
   }
@@ -92,6 +95,7 @@ a { text-decoration: none; color: #267CB9; }
     height: auto;
     border-right: none;
     border-bottom: 1px solid #dee2e6;
+    left: 0;
   }
 
   .main-content {
@@ -105,7 +109,7 @@ html {
 
 
 
-.sidebar nav strong {
+.my-name {
   font-size: 1.85em;
   text-align: left;
   display: block;

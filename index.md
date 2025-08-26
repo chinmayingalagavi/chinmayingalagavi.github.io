@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Homepage
 ---
 
 <h2 id="bio">Bio</h2>
