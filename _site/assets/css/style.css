@@ -220,7 +220,7 @@ a:hover, a:focus { color: #004488; /* A middle-ground blue */ font-weight: norma
 html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
 /* Your tweaks (safe to edit): */
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background-color: #f8f9fa; padding-top: 30px; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background-color: #f8f9fa; }
 
 a { text-decoration: none; color: #267CB9; }
 
@@ -228,28 +228,35 @@ a { text-decoration: none; color: #267CB9; }
 
 .wrapper { display: flex; }
 
-.sidebar { width: 320px; position: fixed; left: calc(30% - 235px); padding: 15px 10px 15px 10px; box-sizing: border-box; border: 1px solid grey; border-radius: 5px; max-height: calc(100vh - 60px); /* Added to compress height */ overflow-y: auto; /* Added to make content scrollable */ }
+.sidebar { width: 320px; position: fixed; top: 50px; left: calc(30% - 235px); padding: 15px 10px 15px 10px; box-sizing: border-box; border: 1px solid grey; border-radius: 5px; height: calc(100vh - 100px); /* 50px from top and 50px from bottom */ overflow-y: auto; /* Added to make content scrollable */ }
 
-.sidebar nav ul { list-style: none; padding: 0; margin-top: 10px; border-top: 1px solid #dee2e6; }
+.sidebar nav { display: flex; flex-direction: column; height: 100%; /* Ensure nav takes full height of sidebar */ }
 
-.sidebar nav ul li a { display: block; padding: 3px 0; color: #267CB9; border-bottom: 1px solid #dee2e6; }
+.sidebar nav ul { list-style: none; padding: 0; margin-top: 10px; text-align: center; padding-left: 40px; padding-right: 40px; }
+
+.sidebar nav ul li a { display: block; padding: 3px 20px; color: #267CB9; border-bottom: 1px solid #dee2e6; }
+
+/* only the first list item  (to add a top border) */
+.sidebar nav ul li:first-child a { border-top: 1px solid #dee2e6; }
 
 .sidebar nav ul li a:hover, .sidebar nav ul li a:focus { color: #004488; }
 
-.main-content { margin-left: 350px; padding: 30px 10px 30px 20px; font-size: 1.1em; max-width: 900px; }
+.main-content { margin-left: 350px; padding: 50px 10px 30px 20px; font-size: 1.1em; max-width: 900px; }
 
-.social-links { margin-top: 20px; text-align: left; }
+.social-links { margin-top: 20px; text-align: left; padding-left: 40px; }
 
 .social-links a { display: block; margin: 10px 0; color: #267CB9; text-decoration: none; }
 
 .social-links a:hover, .social-links a:focus { color: #004488; }
 
-@media (max-width: 800px) { .wrapper { flex-direction: column; }
-  .sidebar { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid #dee2e6; left: 0; }
-  .main-content { margin-left: 0; } }
+@media (max-width: 750px) { .wrapper { flex-direction: column; }
+  .sidebar { position: static !important; top: auto; left: auto; width: 100%; height: auto; /* <-- add this */ overflow: visible; /* or keep scroll: overflow-y:auto; */ border-right: none; border-bottom: 1px solid #dee2e6; }
+  .main-content { margin-left: 0 !important; width: 100%; max-width: none; padding: 20px; box-sizing: border-box; } }
 html { scroll-behavior: smooth; }
 
-.my-name { font-size: 1.85em; text-align: left; display: block; width: 100%; margin-bottom: 5px; }
+.my-name { font-size: 1.85em; text-align: center; display: block; width: 100%; margin-bottom: 5px; }
+
+.sidebar nav p { text-align: center; }
 
 .social-icon { width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; }
 
@@ -260,3 +267,5 @@ html { scroll-behavior: smooth; }
 .abstract-content p { margin-bottom: 0px; }
 
 .abstract-toggle:hover { color: #004488; }
+
+.theme-credit { margin-top: auto; }

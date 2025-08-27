@@ -18,7 +18,6 @@ html, body {
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background-color: #f8f9fa;
-  padding-top: 30px; 
 }
 a { text-decoration: none; color: #267CB9; }
 .site-title { letter-spacing: .3px; }
@@ -31,27 +30,42 @@ a { text-decoration: none; color: #267CB9; }
 .sidebar {
   width: 320px;
   position: fixed;
+  top: 50px;
   left: calc(30% - 235px);
   padding: 15px 10px 15px 10px;
   box-sizing: border-box;
   border: 1px solid grey;
   border-radius: 5px;
-  max-height: calc(100vh - 60px); /* Added to compress height */
+  height: calc(100vh - 100px); /* 50px from top and 50px from bottom */
   overflow-y: auto; /* Added to make content scrollable */
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure nav takes full height of sidebar */
 }
 
 .sidebar nav ul {
   list-style: none;
   padding: 0;
   margin-top: 10px;
-  border-top: 1px solid #dee2e6;
+  // border-top: 1px solid #dee2e6;
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .sidebar nav ul li a {
   display: block;
-  padding: 3px 0;
+  padding: 3px 20px;
   color: #267CB9;
   border-bottom: 1px solid #dee2e6;
+}
+
+/* only the first list item  (to add a top border) */ 
+.sidebar nav ul li:first-child a {
+  border-top: 1px solid #dee2e6;
 }
 
 .sidebar nav ul li a:hover, .sidebar nav ul li a:focus {
@@ -62,7 +76,7 @@ a { text-decoration: none; color: #267CB9; }
 
 .main-content {
   margin-left: 350px;
-  padding: 30px 10px 30px 20px;
+  padding: 50px 10px 30px 20px;
   font-size: 1.1em;
   
   max-width: 900px;
@@ -71,6 +85,7 @@ a { text-decoration: none; color: #267CB9; }
 .social-links {
   margin-top: 20px;
   text-align: left;
+  padding-left: 40px;
 }
 
 .social-links a {
@@ -86,23 +101,27 @@ a { text-decoration: none; color: #267CB9; }
 
 
 
-@media (max-width: 800px) {
-  .wrapper {
-    flex-direction: column;
-  }
+@media (max-width: 750px) {
+  .wrapper { flex-direction: column; }
 
   .sidebar {
-    position: static;
+    position: static !important;
+    top: auto; left: auto;
     width: 100%;
-    height: auto;
+    height: auto;           /* <-- add this */
+    overflow: visible;      /* or keep scroll: overflow-y:auto; */
     border-right: none;
     border-bottom: 1px solid #dee2e6;
-    left: 0;
   }
 
   .main-content {
-    margin-left: 0;
+    margin-left: 0 !important;
+    width: 100%;
+    max-width: none;
+    padding: 20px;
+    box-sizing: border-box;
   }
+
 }
 
 html {
@@ -113,10 +132,14 @@ html {
 
 .my-name {
   font-size: 1.85em;
-  text-align: left;
+  text-align: center;
   display: block;
   width: 100%;
   margin-bottom: 5px;
+}
+
+.sidebar nav p {
+  text-align: center;
 }
 
 .social-icon {
@@ -146,4 +169,8 @@ html {
 
 .abstract-toggle:hover {
   color: #004488;
+}
+
+.theme-credit {
+  margin-top: auto;
 }
