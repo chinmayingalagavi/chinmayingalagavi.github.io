@@ -228,7 +228,7 @@ a { text-decoration: none; color: #267CB9; }
 
 .wrapper { display: flex; }
 
-.sidebar { width: 320px; position: fixed; left: calc(30% - 235px); padding: 15px 10px 15px 10px; box-sizing: border-box; border: 1px solid grey; border-radius: 5px; }
+.sidebar { width: 320px; position: fixed; left: calc(30% - 235px); padding: 15px 10px 15px 10px; box-sizing: border-box; border: 1px solid grey; border-radius: 5px; max-height: calc(100vh - 60px); /* Added to compress height */ overflow-y: auto; /* Added to make content scrollable */ }
 
 .sidebar nav ul { list-style: none; padding: 0; margin-top: 10px; border-top: 1px solid #dee2e6; }
 

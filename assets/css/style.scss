@@ -36,6 +36,8 @@ a { text-decoration: none; color: #267CB9; }
   box-sizing: border-box;
   border: 1px solid grey;
   border-radius: 5px;
+  max-height: calc(100vh - 60px); /* Added to compress height */
+  overflow-y: auto; /* Added to make content scrollable */
 }
 
 .sidebar nav ul {
