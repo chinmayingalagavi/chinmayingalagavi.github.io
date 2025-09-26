@@ -1,3 +1,3 @@
 # chinmayingalagavi.github.io
 
-Based on the Minimal theme by orderedlist.
+Website of Chinmay Ingalagavi. Based on the Minimal theme by orderedlist.
