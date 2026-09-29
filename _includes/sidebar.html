@@ -1,3 +1,8 @@
+{% comment %}
+AUTHOR: Chinmay and AI
+Render social links and navigation from site.data; use the same content checks
+as index.md so sidebar links match visible sections. Keep links without data sources.
+{% endcomment %}
 <nav>
   <strong class="my-name">Chinmay Ingalagavi</strong>
   <p>PhD student, Economics <br>
@@ -16,17 +21,15 @@
   <ul>
     {% for item in site.data.navigation %}
       {% if item.data_source %}
+        {% assign section_data = site.data[item.data_source] %}
         {% if item.data_key %}
-          {% if site.data[item.data_source] and site.data[item.data_source][item.data_key] %}
-            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-          {% endif %}
-        {% else %}
-          {% if site.data[item.data_source] %}
-            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-          {% endif %}
+          {% assign section_data = section_data[item.data_key] | default: '' | strip %}
+        {% endif %}
+        {% if section_data and section_data != empty %}
+          <li><a href="{{ item.url | escape }}">{{ item.name | escape }}</a></li>
         {% endif %}
       {% else %}
-        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+        <li><a href="{{ item.url | escape }}">{{ item.name | escape }}</a></li>
       {% endif %}
     {% endfor %}
   </ul>

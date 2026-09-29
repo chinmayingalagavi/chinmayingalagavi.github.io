@@ -3,15 +3,28 @@ layout: default
 title: Home
 ---
 
-<h2 id="bio">Bio</h2>
+{% comment %}
+AUTHOR: Chinmay and AI
+Render sections from site.data.navigation in list order, using each entry's
+name, URL anchor, and data source. Omit sections whose content is empty.
+{% endcomment %}
 
-{{ site.data.bio.bio_text }}
+{% for item in site.data.navigation %}
+{% assign section_data = site.data[item.data_source] %}
+{% if item.data_key %}
+{% assign section_data = section_data[item.data_key] | default: '' | strip %}
+{% endif %}
+{% if section_data and section_data != empty %}
+<h2 id="{{ item.url | remove_first: '#' | escape }}">{{ item.name | escape }}</h2>
 
-{% if site.data.publications %}
-<h2 id="publications">Publications</h2>
+{% if item.data_key %}
+{{ section_data | markdownify }}
+{% else %}
+{% case item.data_source %}
+{% when 'publications' %}
 
 <ul>
-{% for pub in site.data.publications %}
+{% for pub in section_data %}
   <li>
     <strong>{{ pub.title }}</strong>
     {% if pub.abstract %}
@@ -35,13 +48,10 @@ title: Home
   </li>
 {% endfor %}
 </ul>
-{% endif %}
-
-{% if site.data.works_in_progress %}
-<h2 id="works-in-progress">Works in Progress</h2>
+{% when 'works_in_progress' %}
 
 <ul>
-{% for paper in site.data.works_in_progress %}
+{% for paper in section_data %}
   <li>
     <strong>{{ paper.title }}</strong><br>
     With: {{ paper.coauthors }}<br>
@@ -49,23 +59,17 @@ title: Home
   </li>
 {% endfor %}
 </ul>
-{% endif %}
-
-{% if site.data.teaching %}
-<h2 id="teaching">Teaching</h2>
+{% when 'teaching' %}
 
 <ul>
-{% for course in site.data.teaching %}
+{% for course in section_data %}
   <li>
     <strong>{{ course.course }}</strong> ({{ course.semester }})
     {{ course.description | markdownify }}
   </li>
 {% endfor %}
 </ul>
+{% endcase %}
 {% endif %}
-
-{% if site.data.other.other_text %}
-<h2 id="other">Other</h2>
-
-{{ site.data.other.other_text | markdownify }}
 {% endif %}
+{% endfor %}

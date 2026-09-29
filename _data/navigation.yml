@@ -1,10 +1,13 @@
+# Controls sidebar links and page sections: list order, heading names, and anchors.
 - name: Bio
   url: "#bio"
+  data_source: "bio"
+  data_key: "bio_text"
 - name: Teaching
   url: "#teaching"
   data_source: "teaching"
-- name: About Me
-  url: "#about-me"
+- name: About
+  url: "#about"
   data_source: "other"
   data_key: "other_text"
 - name: Publications
